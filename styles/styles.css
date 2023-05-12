@@ -1,0 +1,311 @@
+/* Colors */
+
+html {
+  --color-primary: hsl(192, 37%, 48%);
+  --color-secondary: hsl(267, 34%, 53%);
+
+  --color-accent-primary: hsl(192, 90%, 77%);
+  --color-accent-secondary: hsl(268, 100%, 86%);
+
+  --color-text-base: hsl(239, 10%, 57%);
+  --color-text-heading: hsl(239, 21%, 20%);
+
+  --color-bg-body: hsl(0 98% 100%);
+}
+
+
+
+
+
+
+
+
+
+
+/* Text */
+
+html {
+  --ff-base: 'Red Hat Display', sans-serif;
+  --ff-heading: 'Red Hat Display', sans-serif;
+
+  --fs-base: 1rem;         /* 16px */
+  --fs-heading: 2.5rem;    /* 40px */
+  --fs-subheading: 2rem;   /* 40px */
+
+  --fw-base: 500;          /* Medium */
+  --fw-bold: 900;          /* Black  */
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    --fs-heading: 3rem;      /* 48px */
+    --fs-subheading: 2.5rem; /* 40px */
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  html { 
+    --fs-base: 1.125rem; /* 18px */
+    --fs-heading: 4rem;  /* 64px */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Spacing */
+
+html {
+  --gap-header-main: 1.5rem;
+  --gap-main-footer: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* Resets */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* Roots */
+
+html {
+  font-family: var(--ff-base);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-base);
+  text-align: center;
+
+  color: var(--color-text-base);
+}
+
+body {
+  background: var(--color-bg-body);
+}
+
+
+
+
+
+
+
+
+
+
+/* Base text */
+
+p {
+  line-height: 1.5;
+
+  width: var(--size-text-base);
+  margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+/* Headings and subheadings */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-bold);
+
+  margin: auto;
+
+  color: var(--color-text-heading);
+}
+
+h1 {
+  font-size: var(--fs-heading);
+  width: var(--size-text-heading);
+}
+
+h2, h3, h4, h5, h6 {
+  font-size: var(--fs-subheading);
+  width: var(--size-text-subheading);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Classes Reference
+
+.ad
+.ad__heading
+.ad__body
+
+.cta
+.cta--primary
+.cta--secondary
+
+*/
+
+.ad--first {
+  background: url(../assets/tablet/image-hero.png) top / contain no-repeat;
+  padding: 10rem 0 0 0;
+}
+
+@media screen and (min-width: 1440px) {
+  .ad--first {
+    background: 
+      url(../assets/desktop/image-hero-left.png) left / auto no-repeat,
+      url(../assets/desktop/image-hero-right.png) right / auto no-repeat;
+  }
+}
+
+/* 
+.ad--first .ctas {
+  display: flex;
+} 
+*/
+
+@media screen and (min-width: 768px) {
+  .ad--first .ctas {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.ad--second .ad__images {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.ad--second .ad__image {
+  width: 151px;
+  height: 143px;
+  border-radius: 1em;
+}
+
+.ad--second .ad__image--first {
+  background: url(../assets/desktop/image-woman-in-videocall.jpg) center / contain no-repeat;
+}
+
+.ad--second .ad__image--second {
+  background: url(../assets/desktop/image-women-videochatting.jpg) center / contain no-repeat;
+}
+
+.ad--second .ad__image--third {
+  background: url(../assets/desktop/image-men-in-meeting.jpg) center / contain no-repeat;
+}
+
+.ad--second .ad__image--fourth {
+  background: url(../assets/desktop/image-man-texting.jpg) center / contain no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+.ad--third {
+  background: linear-gradient(hsl(192, 37%, 48%, 90%), hsl(192, 37%, 48%, 90%)), url(../assets/mobile/image-footer.jpg) top / cover no-repeat;
+  color: hsl(0, 0%, 98%);
+}
+
+.ad--third .ad__heading {
+  color: hsl(0, 0%, 98%);
+}
+
+
+
+
+
+
+
+
+
+
+.cta {
+  text-decoration: none;
+  display: inline-block;
+  padding: 1em 2em;
+  border-radius: 100em;
+  color: hsl(0, 0%, 98%);
+}
+
+.cta--primary {
+  background: var(--color-primary);
+}
+
+.cta--secondary {
+  background: var(--color-secondary);
+}
+
+
+
+
+
+
+
+
+
+
+/* Helpers */
+
+.color-accent-primary {
+  color: var(--color-accent-primary);
+}
+
+.color-accent-secondary {
+  color: var(--color-accent-secondary);
+}
