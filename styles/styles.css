@@ -8,9 +8,12 @@ html {
   --color-accent-secondary: hsl(268, 100%, 86%);
 
   --color-text-base: hsl(239, 10%, 57%);
-  --color-text-heading: hsl(239, 21%, 20%);
+  --color-text-base-alternative: hsl(0, 98%, 100%);
 
-  --color-bg-body: hsl(0 98% 100%);
+  --color-text-heading: hsl(239, 21%, 20%);
+  --color-text-heading-alternative: hsl(0, 98%, 100%);
+
+  --color-bg-body: hsl(0, 98%, 100%);
 }
 
 
@@ -45,8 +48,9 @@ html {
 
 @media screen and (min-width: 1440px) {
   html { 
-    --fs-base: 1.125rem; /* 18px */
-    --fs-heading: 4rem;  /* 64px */
+    --fs-base: 1.125rem;     /* 18px */
+    --fs-heading: 3.5rem;    /* 64px */
+    --fs-subheading: 2.2rem; /* 40px */
   }
 }
 
@@ -59,23 +63,7 @@ html {
 
 
 
-/* Spacing */
-
-html {
-  --gap-header-main: 1.5rem;
-  --gap-main-footer: 1.5rem;
-}
-
-
-
-
-
-
-
-
-
-
-/* Resets */
+/* Generic */
 
 html {
   box-sizing: border-box;
@@ -89,6 +77,15 @@ html {
 
 body {
   margin: 0;
+  background: var(--color-bg-body);
+}
+
+p {
+  margin: 0;
+}
+
+* {
+  margin: 0; /* PLEASE REMOVE LATER */
 }
 
 
@@ -99,68 +96,30 @@ body {
 
 
 
-
-/* Roots */
+/* Base text and headings */
 
 html {
   font-family: var(--ff-base);
   font-size: var(--fs-base);
   font-weight: var(--fw-base);
+  line-height: 1.4;
   text-align: center;
-
   color: var(--color-text-base);
 }
-
-body {
-  background: var(--color-bg-body);
-}
-
-
-
-
-
-
-
-
-
-
-/* Base text */
-
-p {
-  line-height: 1.5;
-
-  width: var(--size-text-base);
-  margin: auto;
-}
-
-
-
-
-
-
-
-
-
-
-/* Headings and subheadings */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--ff-heading);
   font-weight: var(--fw-bold);
-
-  margin: auto;
-
+  line-height: 1;
   color: var(--color-text-heading);
 }
 
 h1 {
   font-size: var(--fs-heading);
-  width: var(--size-text-heading);
 }
 
 h2, h3, h4, h5, h6 {
   font-size: var(--fs-subheading);
-  width: var(--size-text-subheading);
 }
 
 
@@ -172,108 +131,44 @@ h2, h3, h4, h5, h6 {
 
 
 
+/* logo component reference
 
-/* Classes Reference
+.logo
+.logo__image
+.logo__text
 
-.ad
-.ad__heading
-.ad__body
+*/
+
+.logo {
+  padding: 3rem 0;
+}
+
+.logo__image {
+  width: 119px;
+  height: 28px;
+  background: url(../assets/logo.svg) no-repeat center / contain;
+}
+
+.logo__text {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* cta component reference
 
 .cta
 .cta--primary
 .cta--secondary
 
 */
-
-.ad--first {
-  background: url(../assets/tablet/image-hero.png) top / contain no-repeat;
-  padding: 10rem 0 0 0;
-}
-
-@media screen and (min-width: 1440px) {
-  .ad--first {
-    background: 
-      url(../assets/desktop/image-hero-left.png) left / auto no-repeat,
-      url(../assets/desktop/image-hero-right.png) right / auto no-repeat;
-  }
-}
-
-/* 
-.ad--first .ctas {
-  display: flex;
-} 
-*/
-
-@media screen and (min-width: 768px) {
-  .ad--first .ctas {
-    display: flex;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-.ad--second .ad__images {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.ad--second .ad__image {
-  width: 151px;
-  height: 143px;
-  border-radius: 1em;
-}
-
-.ad--second .ad__image--first {
-  background: url(../assets/desktop/image-woman-in-videocall.jpg) center / contain no-repeat;
-}
-
-.ad--second .ad__image--second {
-  background: url(../assets/desktop/image-women-videochatting.jpg) center / contain no-repeat;
-}
-
-.ad--second .ad__image--third {
-  background: url(../assets/desktop/image-men-in-meeting.jpg) center / contain no-repeat;
-}
-
-.ad--second .ad__image--fourth {
-  background: url(../assets/desktop/image-man-texting.jpg) center / contain no-repeat;
-}
-
-
-
-
-
-
-
-
-
-
-.ad--third {
-  background: linear-gradient(hsl(192, 37%, 48%, 90%), hsl(192, 37%, 48%, 90%)), url(../assets/mobile/image-footer.jpg) top / cover no-repeat;
-  color: hsl(0, 0%, 98%);
-}
-
-.ad--third .ad__heading {
-  color: hsl(0, 0%, 98%);
-}
-
-
-
-
-
-
-
-
-
 
 .cta {
   text-decoration: none;
@@ -300,6 +195,339 @@ h2, h3, h4, h5, h6 {
 
 
 
+/* divider and number */
+
+.divider-container {
+  display: flex;
+}
+
+.divider-left {
+  border-right: 1px solid hsl(240, 10%, 57%, 25%);
+  width: 100%;
+  height: 84px;
+}
+
+.divider-right {
+  width: 100%;
+  height: 84px;
+}
+
+.number {
+  display: inline-block;
+  border: 1px solid hsl(240, 10%, 57%, 25%);
+  border-radius: 1000rem;
+  background: var(--color-bg-body);
+  color: hsl(240, 10%, 57%);
+  padding: 1rem 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+/* ad sections */
+
+.ad--first {
+  background: url(../assets/tablet/image-hero.png) no-repeat top / contain;
+  padding-top: 50%;
+}
+
+.ad--third {
+  background: linear-gradient(hsl(192, 37%, 48%, 90%), hsl(192, 37%, 48%, 90%)), url(../assets/mobile/image-footer.jpg) no-repeat top / cover;
+  padding: 4.5rem 0;
+  color: white;
+}
+
+.ad--third .ad__heading {
+  color: var(--color-text-heading-alternative);
+  margin-bottom: 1.5rem;
+}
+
+.ad--third .ad__body {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .ad--third {
+    background: linear-gradient(hsl(192, 37%, 48%, 90%), hsl(192, 37%, 48%, 90%)), url(../assets/tablet/image-footer.jpg) no-repeat top / cover;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .ad--first {
+    background: 
+    url(../assets/desktop/image-hero-left.png) no-repeat -3rem / auto,
+    url(../assets/desktop/image-hero-right.png) no-repeat calc(100% + 3rem) / auto;
+    padding-top: 0;
+  }
+
+  .ad--third {
+    display: flex;
+    justify-content: space-around;
+    text-align: start;
+    background: linear-gradient(hsl(192, 37%, 48%, 90%), hsl(192, 37%, 48%, 90%)), url(../assets/desktop/image-footer.jpg) no-repeat top / cover;
+    padding: 6rem 0;
+  }
+
+  .ad--third .ad__heading,
+  .ad--third .ad__body {
+    margin: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.ad__images {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.ad__image {
+  width: 141px;
+  height: 133px;
+  border-radius: 1rem;
+}
+
+.ad__image--first {
+  background: url(../assets/desktop/image-woman-in-videocall.jpg) no-repeat center / contain;
+}
+
+.ad__image--second {
+  background: url(../assets/desktop/image-women-videochatting.jpg) no-repeat center / contain;
+}
+
+.ad__image--third {
+  background: url(../assets/desktop/image-men-in-meeting.jpg) no-repeat center / contain;
+}
+
+.ad__image--fourth {
+  background: url(../assets/desktop/image-man-texting.jpg) no-repeat center / contain;
+}
+
+@media screen and (min-width: 1440px) {
+  .ad__images {
+    gap: 2rem;
+  }
+
+  .ad__image {
+    width: 255px;
+    height: 242px;
+    border-radius: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+.ad--first .ad__heading,
+.ad--first .ad__body,
+.ad--second .ad__heading,
+.ad--second .ad__body,
+.ad--third .ad__heading,
+.ad--third .ad__body {
+  max-width: 327px;
+}
+
+@media screen and (min-width: 768px) {
+  .ad--first .ad__heading {
+    max-width: 339px;
+  }
+
+  .ad--first .ad__body {
+    max-width: 457px;
+  }
+
+  .ad--second .ad__heading {
+    max-width: 445px;
+  }
+
+  .ad--second .ad__body {
+    max-width: 573px;
+  }
+
+  .ad--third .ad__heading {
+    max-width: 457px;
+  }
+
+  .ad--third .ad__body {
+    max-width: 573px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .ad--first .ad__heading {
+    max-width: 445px;
+  }
+
+  .ad--first .ad__body {
+    max-width: 540px;
+  }
+
+  .ad--second .ad__heading {
+    max-width: 445px;
+  }
+
+  .ad--second .ad__body {
+    max-width: 540px;
+  }
+
+  .ad--third .ad__heading {
+    max-width: 457px;
+  }
+
+  .ad--third .ad__body {
+    max-width: 350px;
+  }
+}
+
+
+
+
+
+
+
+
+
+.ad__heading--accent {
+  font-size: var(--fs-base);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--color-primary);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Layout */
+
+@media screen and (min-width: 768px) {
+  .flex-at-tablet {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .flex-at-desktop {
+    display: flex;
+  }
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+/* Spacing reference
+
+Mobile: 54, 48, 24, 32, 16, 64
+Tablet: 40, 32, 64, 80, 16, 48, 67, 24, 72
+Desktop: 108, 32, 116, 64, 80, 16, 32, 72
+
+*/
+
+.gap-component-1 {
+  margin-bottom: 1rem; /* 16 */
+}
+
+.gap-component-2 {
+  margin-bottom: 1.5rem; /* 24 */
+}
+
+.gap-component-3 {
+  margin-bottom: 2rem; /* 32 */
+}
+
+@media screen and (min-width: 1440px) {
+  .gap-component-1 {
+    margin-bottom: 1.5rem; /* 16 */
+  }
+  
+  .gap-component-2 {
+    margin-bottom: 2rem; /* 24 */
+  }
+  
+  .gap-component-3 {
+    margin-bottom: 3rem; /* 32 */
+  }
+}
+
+
+
+
+.gap-section-1 {
+  margin-bottom: 3rem;
+}
+
+.gap-section-2 {
+  margin-bottom: 3.5rem;
+}
+
+.gap-section-3 {
+  margin-bottom: 4rem;
+}
+
+@media screen and (min-width: 1440px) {
+  .gap-section-1 {
+    margin-bottom: 64px;
+  }
+  
+  .gap-section-2 {
+    margin-bottom: 72px;
+  }
+  
+  .gap-section-3 {
+    margin-bottom: 4rem;
+  }
+}
+
+
+
+
+
+
+
+
+
 /* Helpers */
 
 .color-accent-primary {
@@ -308,4 +536,13 @@ h2, h3, h4, h5, h6 {
 
 .color-accent-secondary {
   color: var(--color-accent-secondary);
+}
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pull-up {
+  margin-top: -1.8rem;
 }
